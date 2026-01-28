@@ -1,1 +1,158 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Fonts */
+  --font-roboto: 'Roboto', sans-serif;
+  --font-lora: 'Lora', serif;
+
+  /* Primary Colours */
+  --color-bpGreen: #007f00;
+  --color-bpLightGreen: #99cc00;
+  --color-bpYellow: #ffe600;
+  --color-bpWhite: #ffffff;
+
+  /* Suppoting Colours */
+  --color-bpBrightGreen: #ccff00;
+  --color-bpDarkGreen: #004f00;
+  --color-bpDarkBlue: #000099;
+  --color-bpYellowOrange: #ff9900;
+  --color-bpLightGrey: #999999;
+  --color-bpDarkGrey: #666666;
+  --color-bpBlack: #000000; /* Please note that bp black is to be used for text only. */
+
+  /* Background Colours */
+  --color-bpPaleYellow: #fbdb65;
+  --color-bpPaleGreen: #bedbbf;
+  --color-bpPaleGrey1: #f7f7f7;
+  --color-bpPaleGrey2: #ebebeb;
+
+  /* Accent Colours */ /* Accent colours shall only ever be used in small amounts to draw the viewer’s attention */
+  --color-bpOrangeOnLight: #d24614; /* use on light backgrounds */
+  --color-bpOrangeOnDark: #b32d00; /* use on dark backgrounds */
+  --color-bpPurple: #660099;
+  --color-bpBlueOnLight: #007ac9;
+  --color-bpBlueOnDark: #009ee0;
+  --color-bpNeonGreen: #00f500;
+
+  /* Secondary Colours */
+  --color-bpDeepOrange1: #c80000;
+  --color-bpDeepOrange2: #ff4116;
+  --color-bpDeepOrange3: #ffb29a;
+  --color-bpPurple1: #64009c;
+  --color-bpPurple2: #983dc9;
+  --color-bpPurple3: #e6c6ff;
+
+  /* Neutrals */
+  --color-bpWarmGrey1: #f7f8f0;
+  --color-bpWarmGrey2: #e1e3d6;
+  --color-bpWarmGrey3: #bbbcaa;
+  --color-bpWarmGrey4: #828474;
+  --color-bpWarmGrey5: #494736;
+  --color-bpWarmGrey6: #121000;
+
+  /* ArriColours */
+  --color-arriPurple: #8351c6;
+  --color-arriPurple2: #7a288e;
+  --color-arriDarkGrey: #333333;
+  --color-arriDarkGrey2: #282828;
+  --color-arriDarkGrey3: #1d1d1b;
+  --color-arriDarkGrey4: #4d4d4d;
+  --color-arriBrightGreen: #a3d625;
+  --color-arriLightGrey: #c8c8c8;
+  --color-arriLightGrey2: #afafaf;
+  --color-arriLightGrey3: #959595;
+  --color-arriBrightOrange: #ff6600;
+
+  --animate-rotate: rotate 2s linear infinite;
+
+  --animate-magic-border: magic-border 8s ease-in-out infinite;
+  @keyframes magic-border {
+    0% {
+      transform: rotate(-360deg) scale(10);
+    }
+    100% {
+      transform: rotate(0deg) scale(10);
+    }
+  }
+}
+
+body,
+html {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-button {
+  @apply px-4 py-2 text-xl text-black dark:text-white;
+}
+
+.nav-button-active {
+  @apply rounded-full bg-bpLightGreen text-bpWhite dark:bg-arriBrightGreen dark:text-bpBlack;
+}
+
+.bp-button {
+  @apply rounded-full bg-bpPaleGrey2 text-bpLightGrey dark:bg-arriDarkGrey2 dark:text-bpDarkGrey;
+}
+.bp-button-active {
+  @apply rounded-full bg-bpLightGreen text-bpWhite dark:bg-arriBrightGreen dark:text-bpBlack;
+}
+.bp-button-r2xl {
+  @apply rounded-2xl bg-bpPaleGrey1 text-arriDarkGrey3 dark:bg-arriDarkGrey2 dark:text-bpLightGrey;
+}
+.bp-button-r2xl:active {
+  @apply rounded-2xl bg-bpLightGreen text-bpWhite dark:bg-arriBrightGreen dark:text-bpBlack;
+}
+.always-visible-scrollbar::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px; /* Adjust width as desired */
+}
+
+.always-visible-scrollbar::-webkit-scrollbar-track {
+  background-color: #f7f7f7;
+  border-radius: 8px; /* Rounded corners for the track */
+}
+
+.dark .always-visible-scrollbar::-webkit-scrollbar-track {
+  background-color: #999999;
+}
+
+.always-visible-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #99cc00; /* Color of the scrollbar thumb */
+  border-radius: 8px; /* Rounded corners for the thumb */
+  border: 2px solid #f1f1f1; /* Border around the thumb */
+}
+
+.dark .always-visible-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #a3d625;
+  border: 2px solid #666666;
+}
+
+.scroll-fade-mask {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    /* Start transparent at the top */ black 1%,
+    /* Becomes opaque very quickly */ black 99%,
+    /* Stay opaque until near the bottom */ transparent 100%
+      /* Fade to transparent at the very bottom */
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 1%,
+    black 99%,
+    transparent 100%
+  );
+  mask-mode: alpha;
+  -webkit-mask-mode: alpha;
+}
+
+.wk-soft-box-shadow {
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}

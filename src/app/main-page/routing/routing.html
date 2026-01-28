@@ -1,0 +1,15 @@
+<div class="absolute top-0 right-0 bottom-0 left-0 flex pt-6 pb-10">
+  <div
+    class="relative ml-6 h-full w-180 rounded-4xl border-transparent bg-bpPaleGrey1/60 pr-2 dark:bg-bpPaleGrey1/17"
+  >
+    <app-source-select></app-source-select>
+  </div>
+  <div class="relative mr-6 ml-6 w-full grow">
+    <router-outlet></router-outlet>
+    @if (dataService.isIptvControlsActive()) {
+      <app-iptv-controls
+        class="absolute top-0 right-0 bottom-0 left-0 z-20 h-full w-full"
+      ></app-iptv-controls>
+    }
+  </div>
+</div>

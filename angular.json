@@ -13,10 +13,9 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "allowedCommonJsDependencies": ["@crestron/ch5-webxpanel"],
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -24,22 +23,21 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ]
+            "styles": ["src/styles.css"],
+            "scripts": ["./node_modules/@crestron/ch5-crcomlib/build_bundles/umd/cr-com-lib.js"]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "3MB",
+                  "maximumError": "4MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "30kB",
+                  "maximumError": "32kB"
                 }
               ],
               "outputHashing": "all"
@@ -70,10 +68,7 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               {
@@ -81,9 +76,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ]
+            "styles": ["src/styles.css"]
           }
         }
       }

@@ -1,0 +1,82 @@
+<div class="absolute top-3 right-0 bottom-0 left-0 mb-1 flex flex-col">
+  <p class="shrink-0 pt-4 pl-6 text-4xl font-semibold dark:text-bpLightGrey">Source select</p>
+  <div
+    class="h-max-full always-visible-scrollbar scroll-fade-mask relative mt-4 mr-3 overflow-y-scroll"
+  >
+    @for (group of groups; track group) {
+      <ng-container>
+        <p class="pl-6 text-xl text-bpDarkGrey dark:text-bpPaleGrey2">
+          {{ group.name }}
+        </p>
+
+        @for (item of group.items; track item) {
+          <app-source-item
+            [sourceName]="item.sourceName"
+            [sourceType]="item.sourceType"
+            [sourceValue]="item.sourceValue"
+            (sourceSelected)="handleSourceSelection(item.sourceValue)"
+          ></app-source-item>
+        }
+      </ng-container>
+    }
+  </div>
+  <div class="relative flex h-26 w-full items-center py-3 pr-4">
+    <div class="flex h-full w-full items-center gap-4 pl-3">
+      <button
+        class="h-14 w-14 rounded-full bg-bpWhite dark:bg-arriDarkGrey {{
+          dataService.isIptvControlsActive()
+            ? 'border-2 border-bpDarkGreen dark:border-arriBrightGreen'
+            : 'border-2 border-transparent'
+        }} p-1 "
+        (click)="iptvControls()"
+      >
+        <img
+          [src]="
+            themeService.isDarkMode()
+              ? './assets/images/iptv/iptv-controls-dark.svg'
+              : './assets/images/iptv/iptv-controls.svg'
+          "
+          alt="iptv controls"
+        />
+      </button>
+    </div>
+    <div class="flex w-full items-center justify-end pr-2">
+      <p class="pr-2 text-lg text-arriLightGrey3">Clear all sources</p>
+      <div
+        class="relative z-10 flex cursor-pointer items-center overflow-hidden rounded-full border-none border-bpDeepOrange1 p-1"
+      >
+        <div
+          [ngClass]="{ invisible: !clearAll(), visible: clearAll() }"
+          class="{{
+            clearAll()
+              ? 'animate-rotate-2s bg-[conic-gradient(#FF9900_0deg,transparent_360deg)]'
+              : 'animate-none'
+          }} absolute inset-0 rounded-full"
+        ></div>
+        <div
+          class="relative z-20 flex h-14 w-14 items-center justify-center gap-2 rounded-full bg-bpOrangeOnLight text-center text-lg text-bpWhite dark:bg-arriBrightOrange"
+        >
+          <button
+            (touchstart)="clearAllPressed()"
+            (touchend)="clearAllReleased()"
+            (touchcancel)="clearAllReleased()"
+            (mousedown)="clearAllPressed()"
+            (mouseup)="clearAllReleased()"
+            (mouseleave)="clearAllReleased()"
+            class="flex h-full w-full items-center justify-center"
+          >
+            <img
+              class="h-full p-4"
+              src="{{
+                themeService.isDarkMode()
+                  ? './assets/images/bp-crossmark-interface-arri-dark-grey-32.svg'
+                  : './assets/images/bp-crossmark-interface-white-32.svg'
+              }}"
+              alt="Clear all sources"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

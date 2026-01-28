@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1000 1000"
+   fill="#ffffff"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="bp-computer-laptop-pictograms-dark-grey.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="1.167"
+     inkscape:cx="499.57155"
+     inkscape:cy="500"
+     inkscape:window-width="3440"
+     inkscape:window-height="1369"
+     inkscape:window-x="2872"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <title
+     id="title1">computer-laptop</title>
+  <g
+     id="Laptop"
+     style="fill:#333333;fill-opacity:1">
+    <path
+       d="M983.45539,767.99319,880.96274,617.43046a96.0755,96.0755,0,0,0-28.36153-32.16227,65.10617,65.10617,0,0,0,15.3104-41.99267V175.89658a65.48484,65.48484,0,0,0-65.41035-65.41035H197.49855a65.48485,65.48485,0,0,0-65.41035,65.41035V543.27552a65.10622,65.10622,0,0,0,15.3104,41.99267,96.07543,96.07543,0,0,0-28.36152,32.16227L16.54442,767.99319c-2.59514,3.81343-24.8627,38.19036-7.65586,70.7186C23.1251,865.62817,57.007,878.71217,112.46607,878.71217H887.53375c55.45908,0,89.341-13.084,103.57751-40.00038C1008.31809,806.18355,986.05053,771.80662,983.45539,767.99319ZM197.49855,564.13142a20.87919,20.87919,0,0,1-20.85589-20.8559V175.89658a20.87919,20.87919,0,0,1,20.85589-20.8559H802.50126a20.8792,20.8792,0,0,1,20.8559,20.8559V543.27552a20.8792,20.8792,0,0,1-20.8559,20.8559ZM951.691,817.94678c-4.22532,7.83764-23.29826,16.21094-64.15725,16.21094H112.46607c-40.859,0-59.93193-8.3733-64.15726-16.21094-3.8463-7.13181,1.81583-19.93541,5.06652-24.88011l103.34159-151.81a16.16113,16.16113,0,0,0,1.98213-3.5659c1.34011-2.68217,15.59986-29.00488,59.03272-29.00488H782.26805c43.43286,0,57.6926,26.32271,59.03272,29.00488a16.16073,16.16073,0,0,0,1.98213,3.5659L946.53166,792.92744C949.87518,798.01137,955.53731,810.815,951.691,817.94678Z"
+       id="path1"
+       style="fill:#333333;fill-opacity:1" />
+    <path
+       d="M816.83256,735.14782H183.16919a22.27723,22.27723,0,1,0,0,44.55445H816.83256a22.27723,22.27723,0,1,0,0-44.55445Z"
+       id="path2"
+       style="fill:#333333;fill-opacity:1" />
+    <path
+       d="M321.78305,700.49435H777.2286a22.27723,22.27723,0,0,0,0-44.55446H321.78305a22.27723,22.27723,0,0,0,0,44.55446Z"
+       id="path3"
+       style="fill:#333333;fill-opacity:1" />
+    <path
+       d="M222.77315,700.49435h39.604a22.27723,22.27723,0,0,0,0-44.55446h-39.604a22.27723,22.27723,0,1,0,0,44.55446Z"
+       id="path4"
+       style="fill:#333333;fill-opacity:1" />
+  </g>
+  <metadata
+     id="metadata4">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>computer-laptop</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

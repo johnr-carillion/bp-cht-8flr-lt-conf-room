@@ -1,0 +1,82 @@
+<div class="flex w-full">
+  <div class="flex w-2/5 flex-col px-6">
+    <button class="flex h-16 w-full" (click)="toggleDropdown()">
+      <p
+        class="flex h-full w-full items-center justify-center rounded-l-2xl rounded-b-none bg-[#d3ddbf] text-2xl font-semibold dark:bg-bpDarkGrey dark:text-bpWarmGrey2"
+        [ngClass]="{ 'rounded-b-none': isOpen }"
+      >
+        {{ selectedItem() }}
+      </p>
+      <p
+        class="flex h-full w-16 items-center justify-center rounded-r-2xl bg-bpLightGreen text-3xl dark:bg-arriBrightGreen"
+        [ngClass]="{ 'rounded-b-none': isOpen }"
+      >
+        {{ isOpen ? '˄' : '˅' }}
+      </p>
+    </button>
+    @if (isOpen) {
+      <ul
+        class="flex h-36 flex-col overflow-y-auto rounded-b-4xl border-transparent bg-[#d3ddbf] dark:bg-bpDarkGrey dark:text-bpWarmGrey2"
+      >
+        <li
+          class="flex h-18 items-center justify-center pr-12 text-xl"
+          [ngClass]="{
+            'bg-[#eaefdf] dark:bg-bpLightGrey': items[0] == selectedItem(),
+          }"
+          (click)="selectItem(items[0])"
+        >
+          {{ items[0] }}
+        </li>
+        <li
+          class="flex h-18 items-center justify-center pr-12 text-xl"
+          [ngClass]="{
+            'bg-[#eaefdf] dark:bg-bpLightGrey': items[1] == selectedItem(),
+          }"
+          (click)="selectItem(items[1])"
+        >
+          {{ items[1] }}
+        </li>
+      </ul>
+    }
+  </div>
+  <div class="flex w-3/5 flex-col pr-6">
+    <div class="flex justify-end text-center text-2xl">
+      <button
+        class="mr-6 flex h-16 items-center rounded-2xl text-center whitespace-break-spaces dark:text-bpWarmGrey2"
+      >
+        Volume:
+        <p class="font-bold text-bpDeepOrange1 dark:text-bpDeepOrange2">
+          {{ gaugeHeight() }}
+        </p>
+      </button>
+      <button
+        class="mr-6 h-16 w-16 rounded-2xl bg-arriPurple p-3 dark:bg-bpPurple2 active:bg-bpPurple3"
+        (pointerdown)="RampDown(true)"
+        (pointerup)="RampDown(false)"
+        (pointerout)="RampDown(false)"
+      >
+        <img src="./assets/images/bp-sound-down-pictograms-white.svg" alt="volume down" />
+      </button>
+      <button
+        class="mr-6 h-16 w-16 rounded-2xl bg-arriPurple p-3 dark:bg-bpPurple2 active:bg-bpPurple3"
+        (pointerdown)="RampUp(true)"
+        (pointerup)="RampUp(false)"
+        (pointerout)="RampUp(false)"
+      >
+        <img src="./assets/images/bp-sound-up-pictograms-white.svg" alt="volume up" />
+      </button>
+      <button
+        class="h-16 w-16 bg-bpDeepOrange1 dark:bg-bpDeepOrange2 rounded-2xl p-3 {{
+          this.muteState() ? 'animate-pulse' : 'animate-none'
+        }}"
+        (click)="MuteToggle()"
+      >
+        <img
+          src="./assets/images/bp-sound-off-pictograms-white.svg"
+          class="{{ this.muteState() ? 'animate-pulse' : 'animate-none' }}"
+          alt="volume mute"
+        />
+      </button>
+    </div>
+  </div>
+</div>

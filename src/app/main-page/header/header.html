@@ -1,0 +1,111 @@
+<div class="relative">
+  <div class="ml-6 flex">
+    <img
+      *ngIf="!this.themeService.isDarkMode()"
+      class="h-20"
+      src="./assets/images/bp_horizontal_rgb.svg"
+      alt="Light Mode BP logo"
+    />
+    <img
+      *ngIf="this.themeService.isDarkMode()"
+      class="h-20"
+      src="./assets/images/bp_horizontal_rgb_1col_white.svg"
+      alt="Dark Mode BP logo"
+    />
+    <p class="mb-1 self-center text-2xl text-bpLightGreen">cht lt conference room</p>
+  </div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 pt-4">
+    <button
+      (click)="routingPressed()"
+      class="nav-button"
+      routerLink="/main-page/routing/videowall"
+      routerLinkActive="nav-button-active"
+      skipLocationChange="true"
+    >
+      Routing
+    </button>
+    <button
+      class="nav-button"
+      routerLink="/main-page/cameras"
+      routerLinkActive="nav-button-active"
+      skipLocationChange="true"
+    >
+      Cameras
+    </button>
+  </div>
+  <div class="absolute top-0 right-2">
+    <div
+      class="absolute right-23 z-20 flex h-36 w-80 rounded-4xl opacity-0 transition-opacity duration-500"
+      [class.wk-soft-box-shadow]="roomOffPopUpVisible()"
+      [class.opacity-100]="roomOffPopUpVisible()"
+      [class.pointer-events-none]="!roomOffPopUpVisible()"
+    >
+      <div class="flex h-full w-full flex-col rounded-l-4xl bg-bpWhite p-4 dark:bg-bpDarkGrey">
+        <p class="mt-3 text-center text-xl dark:text-bpPaleGrey2">Shutdown the room?</p>
+        <div class="mt-5 flex justify-around">
+          <button
+            (click)="roomOffPressed()"
+            class="ml-4 h-12 w-24 rounded-full bg-bpDeepOrange1 text-xl text-bpPaleGrey1 dark:bg-arriBrightOrange dark:text-arriDarkGrey2"
+          >
+            Yes
+          </button>
+          <button
+            class="mx-4 h-12 w-24 rounded-full bg-bpPaleGrey2 text-xl text-arriDarkGrey2 dark:bg-arriDarkGrey4 dark:text-[#bebebe]"
+            (click)="toggleRoomOffPopUp()"
+          >
+            No
+          </button>
+        </div>
+      </div>
+      <div class="h-full w-full rounded-r-4xl bg-bpWhite dark:bg-bpDarkGrey"></div>
+    </div>
+    <button
+      class="relative z-20 mt-2 mr-4 rounded-full border-transparent bg-bpWhite p-2 dark:bg-bpDarkGrey"
+      (click)="toggleRoomOffPopUp()"
+    >
+      <img
+        *ngIf="!this.themeService.isDarkMode()"
+        class="h-12"
+        src="./assets/images/bp-power-interface-black-32.svg"
+        alt="Power"
+      />
+      <img
+        *ngIf="this.themeService.isDarkMode()"
+        class="h-12"
+        src="./assets/images/bp-power-interface-grey-32.svg"
+        alt="Power"
+      />
+    </button>
+    <button
+      (click)="themeService.toggleTheme()"
+      class="mt-2 mr-4 rounded-full border-transparent bg-bpWhite p-2 dark:bg-bpDarkGrey"
+    >
+      <img
+        *ngIf="!this.themeService.isDarkMode()"
+        class="h-12"
+        src="./assets/images/Dark_Mode_Black.svg"
+        alt="Dark Mode"
+      />
+      <img
+        *ngIf="this.themeService.isDarkMode()"
+        class="h-12"
+        src="./assets/images/Icon-Lightmode.svg"
+        alt="Dark Mode"
+      />
+    </button>
+    <!-- <button class="mt-2 mr-4 rounded-full border-transparent bg-bpWhite p-2 dark:bg-bpDarkGrey">
+      <img
+        *ngIf="!this.themeService.isDarkMode()"
+        class="h-12"
+        src="./assets/images/bp-admin-interface-black-32.svg"
+        alt="Settings"
+      />
+      <img
+        *ngIf="this.themeService.isDarkMode()"
+        class="h-12"
+        src="./assets/images/bp-admin-interface-grey-32.svg"
+        alt="Settings"
+      />
+    </button> -->
+  </div>
+</div>

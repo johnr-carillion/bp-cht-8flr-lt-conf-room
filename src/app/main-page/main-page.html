@@ -1,0 +1,19 @@
+<div
+  class="flex h-full w-full flex-col {{
+    themeService.isDarkMode()
+      ? 'bg-arriDarkGrey3'
+      : 'bg-linear-to-b from-[#DADADA] from-20% to-[#d3ddc0] to-100%'
+  }} "
+>
+  @if (this.themeService.isDarkMode()) {
+    <img
+      class="absolute top-0 left-0"
+      src="./assets/images/BG-1920x1080-Dark.png"
+      alt="Dark mode background"
+    />
+  }
+  <app-header class="sticky top-3 z-30 font-roboto"></app-header>
+  <main class="relative flex-1 overflow-y-auto pt-2 pb-4">
+    <router-outlet />
+  </main>
+</div>

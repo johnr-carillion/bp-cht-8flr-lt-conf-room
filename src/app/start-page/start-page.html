@@ -1,0 +1,86 @@
+@if (!themeService.isDarkMode()) {
+  <img
+    class="absolute top-0 left-0 w-full"
+    src="./assets/images/BG-1280x800.png"
+    alt="Light mode background"
+  />
+}
+@if (themeService.isDarkMode()) {
+  <img
+    class="absolute top-0 left-0 w-full"
+    src="./assets/images/BG-1280x800-Dark.png"
+    alt="Dark mode background"
+  />
+}
+<img class="absolute top-10 left-10 h-48" src="./assets/images/BPP_Rwht.png" alt="BP logo white" />
+<div
+  class="flex h-200 w-full flex-col items-center justify-center bg-bpGreen dark:bg-arriDarkGrey3"
+>
+  <div class="absolute top-46 mt-20 flex justify-center">
+    <p class="text-7xl text-bpWhite">CHT</p>
+    <p class="text-7xl whitespace-break-spaces text-bpYellow">&nbsp;//&nbsp;</p>
+    <p class="text-7xl text-bpWhite">LT Conference Room</p>
+  </div>
+  <button
+    class="relative flex w-2/3 items-center justify-center mt-20"
+    routerLink="/main-page/routing/videowall"
+    skipLocationChange="true"
+  >
+    <div class="relative w-5/12">
+      <p
+        class="absolute flex h-full w-full flex-col items-center justify-center pr-8 text-3xl font-bold text-bpWhite dark:text-bpBlack"
+      >
+        PRESS TO START
+      </p>
+      @if (!themeService.isDarkMode()) {
+        <img
+          class="h-full w-full"
+          src="./assets/images/Button-Start-1.png"
+          alt="Light mode Button 1"
+        />
+      }
+      @if (themeService.isDarkMode()) {
+        <img
+          class="h-full w-full"
+          src="./assets/images/Button-Start-1-Dark.png"
+          alt="Dark mode Button 1"
+        />
+      }
+    </div>
+    @if (!themeService.isDarkMode()) {
+      <img
+        class="h-full w-2/7"
+        src="./assets/images/Button-Start-2.png"
+        alt="Light mode Button 2"
+      />
+    }
+    @if (themeService.isDarkMode()) {
+      <img
+        class="h-full w-2/7"
+        src="./assets/images/Button-Start-2-Dark.png"
+        alt="Dark mode Button 2"
+      />
+    }
+  </button>
+</div>
+<div class="absolute top-5 right-5 flex flex-col">
+  <!-- <button class="mt-2 mr-4 rounded-full border-transparent p-2">
+    <img class="h-12" src="./assets/images/Icon-Settings.png" alt="Settings" />
+  </button> -->
+  @if (!themeService.isDarkMode()) {
+    <button
+      (click)="themeService.toggleTheme()"
+      class="mt-2 mr-4 rounded-full border-transparent p-2"
+    >
+      <img class="h-12" src="./assets/images/Icon-Darkmode.png" alt="Dark Mode" />
+    </button>
+  }
+  @if (themeService.isDarkMode()) {
+    <button
+      (click)="themeService.toggleTheme()"
+      class="mt-2 mr-4 rounded-full border-transparent p-2"
+    >
+      <img class="h-12" src="./assets/images/Icon-Lightmode.png" alt="Light Mode" />
+    </button>
+  }
+</div>

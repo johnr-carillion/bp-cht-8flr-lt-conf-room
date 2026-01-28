@@ -1,0 +1,108 @@
+<div
+  class="backdrop-blur-fix absolute top-0 right-0 bottom-0 left-0 flex flex-col rounded-4xl bg-bpPaleGrey2/80 p-6 dark:bg-bpDarkGrey/80"
+>
+  <p class="pb-6 text-center text-4xl font-semibold">
+    IPTV Controls
+    <button
+      class="border-bpGrey absolute top-5 right-5 h-16 w-16 rounded-full border bg-bpWhite dark:border-bpPaleGrey1 dark:bg-arriDarkGrey"
+      (click)="closeIptvControls()"
+    >
+      <img
+        [src]="
+          themeService.isDarkMode()
+            ? './assets/images/bp-crossmark-interface-white-32.svg'
+            : './assets/images/bp-crossmark-interface-arri-dark-grey-32.svg'
+        "
+        alt="close"
+        class="p-5"
+      />
+    </button>
+  </p>
+
+  <div
+    class="grid h-full min-h-0 w-full flex-1 grid-cols-3 grid-rows-5 items-center justify-center gap-4"
+  >
+    <button
+      class="iptv-preset-button col-start-2 row-start-1 flex h-full w-full items-center justify-center"
+      (click)="tvPresetSelected(1)"
+    >
+      <img src="./assets/images/iptv/bp-content-logo.png" alt="bp content" class="h-full" />
+    </button>
+    <button
+      class="iptv-preset-button wk-soft-box-shadow col-start-1 row-start-2 flex h-full w-full items-center justify-center"
+      (click)="tvPresetSelected(2)"
+    >
+      <img src="./assets/images/iptv/bbc-news-logo.png" alt="bbc news" class="h-full" />
+    </button>
+    <button
+      class="iptv-preset-button wk-soft-box-shadow col-start-2 row-start-2 flex h-full w-full items-center justify-center"
+      (click)="tvPresetSelected(3)"
+    >
+      <img src="./assets/images/iptv/cnbc-logo.png" alt="cnbc" class="h-full" />
+    </button>
+    <button
+      class="iptv-preset-button col-start-3 row-start-2 flex h-full w-full items-center justify-center"
+      (click)="tvPresetSelected(4)"
+    >
+      <img src="./assets/images/iptv/bbc-one-logo.png" alt="bbc one" class="h-full" />
+    </button>
+    <button
+      class="iptv-preset-button col-start-1 row-start-3 flex h-full w-full items-center justify-center"
+      (click)="tvPresetSelected(5)"
+    >
+      <img src="./assets/images/iptv/cnn-logo.png" alt="cnn" class="h-full p-1" />
+    </button>
+    <button
+      class="iptv-preset-button col-start-2 row-start-3 flex h-full w-full items-center justify-center"
+      (click)="tvPresetSelected(6)"
+    >
+      <img src="./assets/images/iptv/aljazeera-logo.png" alt="aljazeera" class="h-full p-2" />
+    </button>
+    <button
+      class="iptv-preset-button col-start-3 row-start-3 flex h-full w-full items-center justify-center"
+      (click)="tvPresetSelected(7)"
+    >
+      <img src="./assets/images/iptv/bbc-two-logo.png" alt="bbc two" class="h-full" />
+    </button>
+    <button
+      class="iptv-preset-button col-start-1 row-start-4 flex h-full w-full items-center justify-center"
+      (click)="tvPresetSelected(8)"
+    >
+      <img
+        src="./assets/images/iptv/bbc-parliament-logo.png"
+        alt="bbc parliament"
+        class="w-full p-8"
+      />
+    </button>
+    <button
+      class="iptv-preset-button col-start-2 row-start-4 flex h-full w-full items-center justify-center"
+      (click)="tvPresetSelected(9)"
+    >
+      <img src="./assets/images/iptv/channel4-logo.svg" alt="channel 4" class="h-full" />
+    </button>
+    <button
+      class="iptv-preset-button col-start-3 row-start-4 flex h-full w-full items-center justify-center"
+      (click)="tvPresetSelected(10)"
+    >
+      <img src="./assets/images/iptv/sky-news-logo.png" alt="sky news" class="h-full" />
+    </button>
+    <button
+      class="iptv-preset-button col-start-1 row-start-5 flex h-full w-full items-center justify-center"
+      (click)="tvPresetSelected(11)"
+    >
+      <img src="./assets/images/iptv/bloomberg-logo.png" alt="bloomberg" class="w-full p-8" />
+    </button>
+    <button
+      class="iptv-preset-button col-start-2 row-start-5 flex h-full w-full items-center justify-center"
+      (click)="tvPresetSelected(12)"
+    >
+      <img src="./assets/images/iptv/itv-logo.svg" alt="itv" class="h-full p-1" />
+    </button>
+    <button
+      class="iptv-preset-button col-start-3 row-start-5 flex h-full w-full items-center justify-center"
+      (click)="tvPresetSelected(13)"
+    >
+      <img src="./assets/images/iptv/gb-news-logo.png" alt="gb news" class="w-full p-10" />
+    </button>
+  </div>
+</div>

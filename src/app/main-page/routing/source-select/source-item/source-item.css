@@ -1,0 +1,12 @@
+@keyframes rotate-clockwise-2s {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate-2s {
+  animation: rotate-clockwise-2s 2s linear infinite;
+}

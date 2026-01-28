@@ -1,0 +1,25 @@
+.slide-right {
+  animation: slideRight 0.3s ease-out forwards;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(80px);
+  }
+}
+
+.slide-left {
+  animation: slideLeft 0.3s ease-out forwards;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(80px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

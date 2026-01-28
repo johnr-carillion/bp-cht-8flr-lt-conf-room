@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 1000 1000"
+   fill="#ffffff"
+   version="1.1"
+   sodipodi:docname="bp-iptv-pictograms-dark-grey.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs5" />
+  <sodipodi:namedview
+     id="namedview5"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="1.167"
+     inkscape:cx="499.57155"
+     inkscape:cy="500"
+     inkscape:window-width="3440"
+     inkscape:window-height="1369"
+     inkscape:window-x="2872"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <title
+     id="title1">screen-dollar</title>
+  <path
+     d="M932.7,61.88H67.3A64.89,64.89,0,0,0,2.48,126.7V688.48A64.89,64.89,0,0,0,67.3,753.3H384.37V893.56H313.3a22.28,22.28,0,1,0,0,44.56H686.7a22.28,22.28,0,0,0,0-44.56H615.63V753.3H932.7a64.89,64.89,0,0,0,64.82-64.82V126.7A64.89,64.89,0,0,0,932.7,61.88ZM571.07,893.56H428.93V753.3H571.07ZM953,688.48a20.3,20.3,0,0,1-20.27,20.27H67.3A20.3,20.3,0,0,1,47,688.48V126.7A20.29,20.29,0,0,1,67.3,106.44H932.7A20.29,20.29,0,0,1,953,126.7Z"
+     id="path1"
+     style="fill:#333333;fill-opacity:1" />
+  <path
+     d="M740.1,384.69v-139c31.17,8.73,50.08,32.9,55.43,57.83a22.28,22.28,0,0,0,43.56-9.35c-10.72-49.93-49.34-84.77-99-94V183.17a22.28,22.28,0,1,0-44.56,0v15.67q-3.54.41-7.13,1c-53.81,8.51-90.94,42.94-96.91,89.84-3,23.3,2.59,47.71,15.63,68.74,13.65,22,34.85,39.7,61.32,51.2a226.91,226.91,0,0,0,27.09,9.55v159c-1.4-.39-2.81-.76-4.22-1.21-33.06-10.52-58.22-36.79-65.67-68.55a22.28,22.28,0,1,0-43.38,10.17c11,46.94,47.62,85.58,95.54,100.84a147.31,147.31,0,0,0,17.73,4.44v14.81a22.28,22.28,0,1,0,44.56,0V625A132.17,132.17,0,0,0,810,593c46.82-41.41,57.64-105.21,25.72-151.69C810.74,405,774,393.35,740.1,384.69Zm-53.9-16c-41.85-18.18-53.36-50.93-50.5-73.45,3.42-26.84,25.72-46.08,59.68-51.46l.16,0V372.37C692.36,371.24,689.24,370,686.2,368.72ZM780.43,559.6a87.46,87.46,0,0,1-40.33,20.1V430.79c24.25,6.77,44.91,15.42,58.84,35.72C820.46,497.85,805.92,537.06,780.43,559.6Z"
+     id="path2"
+     style="fill:#333333;fill-opacity:1" />
+  <path
+     d="M183.17,339.11a22.28,22.28,0,0,0-22.28,22.28V618.81a22.28,22.28,0,1,0,44.56,0V361.39A22.28,22.28,0,0,0,183.17,339.11Z"
+     id="path3"
+     style="fill:#333333;fill-opacity:1" />
+  <path
+     d="M302,160.89a22.29,22.29,0,0,0-22.28,22.28V618.81a22.28,22.28,0,1,0,44.56,0V183.17A22.29,22.29,0,0,0,302,160.89Z"
+     id="path4"
+     style="fill:#333333;fill-opacity:1" />
+  <path
+     d="M420.79,240.1a22.28,22.28,0,0,0-22.28,22.28V618.81a22.28,22.28,0,1,0,44.56,0V262.38A22.27,22.27,0,0,0,420.79,240.1Z"
+     id="path5"
+     style="fill:#333333;fill-opacity:1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>screen-dollar</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

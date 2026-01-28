@@ -1,0 +1,84 @@
+<div
+  class="relative h-full w-full rounded-4xl border-transparent bg-bpPaleGrey1/60 pt-4 dark:bg-bpPaleGrey1/17"
+>
+  <app-displays-header class="relative z-20 flex h-auto w-full flex-col"></app-displays-header>
+
+  <div class="absolute top-24 right-6 bottom-0 left-6 grid grid-cols-13 grid-rows-13 pb-6">
+    <!-- Videowall display  -->
+    <div
+      class="relative items-center row-span-6 col-span-7 col-start-4 justify-center grid grid-cols-subgrid grid-rows-subgrid rounded-4xl bg-bpWhite dark:bg-arriDarkGrey"
+    >
+      <div class="relative col-span-13 col-start-1 row-start-1 flex items-center justify-center">
+        <p class="truncate text-lg dark:text-bpWarmGrey2">Video Wall</p>
+      </div>
+      <button
+        (click)="videowallPressed()"
+        class="flex justify-center items-center flex-col col-span-5 row-span-4 row-start-2 col-start-2 border-2 h-full w-full justify-self-center text-xl text-black dark:text-bpWarmGrey2
+                            {{
+          this.dataService.selectedSourceValue() !== 0 ? 'animate-pulse' : 'animate-none'
+        }} {{
+          dataService.videowallSourceValue() !== 0
+            ? 'border-5 wk-soft-box-shadow border-bpLightGreen dark:border-arriBrightGreen rounded-4xl'
+            : 'border-2 border-bpDarkGrey dark:border-bpLightGrey rounded-4xl '
+        }}"
+      >
+        <img class="h-12 w-12" [src]="dataService.videowallSourceIcon()" alt="Source icon" />
+        {{ dataService.videowallSourceName() }}
+      </button>
+      @if (dataService.videowallSourceValue() !== 0) {
+        <button
+          (click)="videowallClearPressed()"
+          class="absolute right-7 bottom-7 z-20 h-16 w-16 rounded-full border-2 border-bpDeepOrange1 bg-bpWhite p-3 text-2xl font-bold text-bpDeepOrange1 dark:border-arriBrightOrange dark:bg-arriDarkGrey dark:text-arriBrightOrange"
+        >
+          <img
+            src="{{
+              this.themeService.isDarkMode()
+                ? './assets/images/bp-crossmark-interface-arri-bright-orange-32.svg'
+                : './assets/images/bp-crossmark-interface-deep-orange-1-32.svg'
+            }}"
+            alt="Clear source on video wall"
+            class="h-full w-full"
+          />
+        </button>
+      }
+    </div>
+    <!-- Sony display -->
+    <div
+      class="relative items-center row-span-6 col-span-7 col-start-4 row-start-8 justify-center grid grid-cols-subgrid grid-rows-subgrid rounded-4xl bg-bpWhite dark:bg-arriDarkGrey"
+    >
+      <div class="relative col-span-13 col-start-1 row-start-1 flex items-center justify-center">
+        <p class="truncate text-lg dark:text-bpWarmGrey2">Rear Display</p>
+      </div>
+      <button
+        (click)="sonyDisplayPressed()"
+        class="flex justify-center items-center flex-col col-span-5 row-span-4 row-start-2 col-start-2 border-2 h-full w-full justify-self-center text-xl text-black dark:text-bpWarmGrey2
+                            {{
+          this.dataService.selectedSourceValue() !== 0 ? 'animate-pulse' : 'animate-none'
+        }} {{
+          dataService.sonyDisplaySourceValue() !== 0
+            ? 'border-5 wk-soft-box-shadow border-bpLightGreen dark:border-arriBrightGreen rounded-4xl'
+            : 'border-2 border-bpDarkGrey dark:border-bpLightGrey rounded-4xl '
+        }}"
+      >
+        <img class="h-12 w-12" [src]="dataService.sonyDisplaySourceIcon()" alt="Source icon" />
+        {{ dataService.sonyDisplaySourceName() }}
+      </button>
+      @if (dataService.sonyDisplaySourceValue() !== 0) {
+        <button
+          (click)="sonyDisplayClearPressed()"
+          class="absolute right-7 bottom-7 z-20 h-16 w-16 rounded-full border-2 border-bpDeepOrange1 bg-bpWhite p-3 text-2xl font-bold text-bpDeepOrange1 dark:border-arriBrightOrange dark:bg-arriDarkGrey dark:text-arriBrightOrange"
+        >
+          <img
+            src="{{
+              this.themeService.isDarkMode()
+                ? './assets/images/bp-crossmark-interface-arri-bright-orange-32.svg'
+                : './assets/images/bp-crossmark-interface-deep-orange-1-32.svg'
+            }}"
+            alt="Clear source on video wall"
+            class="h-full w-full"
+          />
+        </button>
+      }
+    </div>
+  </div>
+</div>

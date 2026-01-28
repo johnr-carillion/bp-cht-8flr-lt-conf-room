@@ -1,0 +1,3 @@
+.backdrop-blur-fix {
+  backdrop-filter: blur(0.5rem);
+}
