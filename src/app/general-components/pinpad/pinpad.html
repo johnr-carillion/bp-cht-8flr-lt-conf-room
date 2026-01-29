@@ -1,0 +1,56 @@
+<div
+  class="backdrop-blur-fix absolute top-0 right-0 bottom-0 left-0 z-35 flex items-center justify-center bg-bpBlack/60"
+  (click)="clearPinpad()"
+>
+  <div class="grid w-2/5 grid-cols-5 grid-rows-6">
+    <div class="col-span-5">
+      <p class="pb-6 text-center text-5xl text-bpWhite">Enter PIN to continue</p>
+      <p class="text-center text-2xl text-bpPaleGrey2">Please enter your 4 digit PIN code</p>
+    </div>
+    <div
+      class="col-span-3 col-start-2 row-span-5 grid grid-cols-3 grid-rows-5 gap-4 rounded-3xl bg-[#535353] p-4 dark:bg-[#2a2a29]"
+      (click)="$event.stopPropagation()"
+    >
+      <div class="col-span-3 mx-1 h-3/4 rounded-3xl bg-bpWhite dark:bg-bpDarkGrey">
+        @if (!pinIncorrect()) {
+          <p class="pt-4 text-center font-lora text-5xl tracking-widest text-bpLightGreen">
+            {{ pincode() }}
+          </p>
+        }
+        @if (pinIncorrect()) {
+          <p class="pt-5 text-center text-2xl tracking-wide text-bpDeepOrange1">PIN Incorrect</p>
+        }
+      </div>
+      <button class="bp-pinpad-button" (click)="pinpadNumberPressed(1)">1</button>
+      <button class="bp-pinpad-button" (click)="pinpadNumberPressed(2)">2</button>
+      <button class="bp-pinpad-button" (click)="pinpadNumberPressed(3)">3</button>
+      <button class="bp-pinpad-button" (click)="pinpadNumberPressed(4)">4</button>
+      <button class="bp-pinpad-button" (click)="pinpadNumberPressed(5)">5</button>
+      <button class="bp-pinpad-button" (click)="pinpadNumberPressed(6)">6</button>
+      <button class="bp-pinpad-button" (click)="pinpadNumberPressed(7)">7</button>
+      <button class="bp-pinpad-button" (click)="pinpadNumberPressed(8)">8</button>
+      <button class="bp-pinpad-button" (click)="pinpadNumberPressed(9)">9</button>
+      <button
+        class="rounded-2xl bg-arriLightGrey3 text-5xl text-bpWhite dark:bg-bpDarkGrey dark:text-arriDarkGrey"
+        (click)="pinpadClearPressed()"
+      >
+        &lt;&lt;
+      </button>
+      <button class="bp-pinpad-button" (click)="pinpadNumberPressed(0)">0</button>
+      <button
+        class="rounded-2xl bg-[#009140] text-bpWhite dark:text-arriDarkGrey"
+        (click)="pinpadEnterPressed()"
+      >
+        <img
+          src="{{
+            themeService.isDarkMode()
+              ? './assets/images/bp-tick-interface-dark-grey-32.svg'
+              : './assets/images/bp-tick-interface-white-32.svg'
+          }}"
+          alt="Confirm PIN"
+          class="p-4"
+        />
+      </button>
+    </div>
+  </div>
+</div>

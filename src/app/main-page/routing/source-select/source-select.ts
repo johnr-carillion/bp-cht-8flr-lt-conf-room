@@ -33,9 +33,10 @@ export class SourceSelect implements OnInit, OnDestroy {
     this.clearAll.set(true);
     this.timerSubscription = timer(2000).subscribe(() => {
       this.clearAll.set(false);
-      CrComLib.pulseDigital('81');
 
-      CrComLib.setAnalog('11', 0); // Clear source selection
+      CrComLib.setAnalog('10', 0); // Clear Audio Source
+      CrComLib.setAnalog('11', 0); // Clear Videowall Source
+      CrComLib.setAnalog('12', 0); // Clear Sony Display Source
     });
   }
 
@@ -98,6 +99,14 @@ export class SourceSelect implements OnInit, OnDestroy {
   }
   // Data structure
   groups: SourceGroup[] = [];
+
+  // Method to filter items based on active display
+  getFilteredItems(items: any[]) {
+    if (this.dataService.isLowerGroundFloorActive()) {
+      return items.filter((item) => item.sourceValue !== 1 && item.sourceValue !== 3); // Exclude IPTV and LGF Feed for LGF
+    }
+    return items;
+  }
 
   // Method to handle the selection
   handleSourceSelection(sourceValue: number): void {

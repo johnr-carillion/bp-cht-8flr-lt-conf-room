@@ -63,7 +63,7 @@
     }
   </button>
 </div>
-<div class="absolute top-5 right-5 flex flex-col">
+<div class="absolute top-3 right-3 flex flex-col">
   <!-- <button class="mt-2 mr-4 rounded-full border-transparent p-2">
     <img class="h-12" src="./assets/images/Icon-Settings.png" alt="Settings" />
   </button> -->
@@ -76,10 +76,7 @@
     </button>
   }
   @if (themeService.isDarkMode()) {
-    <button
-      (click)="themeService.toggleTheme()"
-      class="mt-2 mr-4 rounded-full border-transparent p-2"
-    >
+    <button (click)="themeService.toggleTheme()" class="rounded-full border-transparent p-2">
       <img class="h-12" src="./assets/images/Icon-Lightmode.png" alt="Light Mode" />
     </button>
   }

@@ -39,7 +39,7 @@
       }
       <!-- Videowall source indicators  -->
       @if (this.sourceOnScreen() && this.isVideowallActive()) {
-        <div class="absolute right-5 grid grid-cols-2 grid-rows-2 gap-0.5">
+        <div class="absolute right-5 grid grid-cols-1 grid-rows-2 gap-0.5">
           <div
             [class]="
               'h-3 w-3 rounded-sm border-transparent ' +
@@ -60,69 +60,23 @@
       }
     </div>
   </div>
-  <!-- 2 buttons on the right -->
-  <div class="flex">
-    <!-- Audio source select -->
-    <img
-      (click)="listenPressed()"
-      class="mx-1 mt-2 h-14 w-14 rounded-full p-3.5"
-      [ngClass]="{
-        'bg-bpWhite dark:bg-arriDarkGrey': audioSource() !== this.sourceValue,
-        'bg-arriPurple dark:bg-bpPurple2': audioSource() === this.sourceValue,
-      }"
-      [src]="
-        audioSource() !== this.sourceValue
-          ? './assets/images/bp-sound-mute-interface-bp-silver-100.png'
-          : './assets/images/bp-sound-interface-bp-white-100.png'
-      "
-      alt="Audio toggle"
-    />
-    <!-- Clear source -->
-    <!-- <div class="mx-1 mt-2 flex h-14 w-14 justify-self-center">
-      <div
-        class="relative z-10 flex cursor-pointer items-center justify-center overflow-hidden rounded-full"
-        *ngIf="sourceOnScreen()"
-      >
-        <div
-          class="{{
-            clearSource()
-              ? 'animate-rotate-2s bg-[conic-gradient(#C80000_0deg,transparent_360deg)]'
-              : 'animate-none border-bpDeepOrange1 dark:border-arriBrightOrange'
-          }} absolute h-14 w-14 inset-0 z-10 rounded-full"
-        ></div>
-        <div
-          class="z-10 {{
-            clearSource()
-              ? 'border-6 border-transparent'
-              : 'border-6 border-bpDeepOrange1 dark:border-arriBrightOrange'
-          }} rounded-full"
-        >
-          <div
-            class="z-20 {{
-              clearSource() ? 'h-11 w-11' : 'h-13 w-13'
-            }} rounded-full bg-bpWhite dark:bg-arriDarkGrey border-4 border-transparent p-3"
-          >
-            <button
-              (touchstart)="clearSourcePressed()"
-              (touchend)="clearSourceReleased()"
-              (touchcancel)="clearSourceReleased()"
-              (mousedown)="clearSourcePressed()"
-              (mouseup)="clearSourceReleased()"
-              (mouseleave)="clearSourceReleased()"
-            >
-              <img
-                src="{{
-                  this.themeService.isDarkMode()
-                    ? './assets/images/bp-crossmark-interface-arri-bright-orange-32.svg'
-                    : './assets/images/bp-crossmark-interface-deep-orange-1-32.svg'
-                }}"
-                alt="Clear source on video wall"
-                class="h-full w-full"
-              />
-            </button>
-          </div>
-        </div>
-      </div>
-    </div> -->
-  </div>
+  @if (!dataService.isLowerGroundFloorActive()) {
+    <div class="flex">
+      <!-- Audio source select -->
+      <img
+        (click)="listenPressed()"
+        class="mx-1 mt-2 h-14 w-14 rounded-full p-3.5"
+        [ngClass]="{
+          'bg-bpWhite dark:bg-arriDarkGrey': audioSource() !== this.sourceValue,
+          'bg-arriPurple dark:bg-bpPurple2': audioSource() === this.sourceValue,
+        }"
+        [src]="
+          audioSource() !== this.sourceValue
+            ? './assets/images/bp-sound-mute-interface-bp-silver-100.png'
+            : './assets/images/bp-sound-interface-bp-white-100.png'
+        "
+        alt="Audio toggle"
+      />
+    </div>
+  }
 </div>

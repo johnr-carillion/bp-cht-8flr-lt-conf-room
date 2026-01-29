@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+@import '../../../styles.css';
+
+.backdrop-blur-fix {
+  backdrop-filter: blur(0.5rem);
+}
+
+.bp-pinpad-button {
+  @apply rounded-2xl bg-bpLightGreen text-5xl text-bpWhite dark:bg-arriBrightGreen dark:text-arriDarkGrey;
+}
+.bp-pinpad-button:active {
+  @apply rounded-2xl bg-bpPaleGrey2 text-bpLightGrey dark:bg-arriDarkGrey2 dark:text-bpDarkGrey;
+}
+.bp-pinpad-button-active {
+  @apply rounded-2xl bg-bpPaleGrey2 text-bpLightGrey dark:bg-arriDarkGrey2 dark:text-bpDarkGrey;
+}

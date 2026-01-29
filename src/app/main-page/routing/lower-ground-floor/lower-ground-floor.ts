@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../../services/data.service';
 import { DisplaysHeader } from '../displays-header/displays-header';
+import { ThemeService } from '../../../services/theme.service';
 
 declare var CrComLib: CrComLib;
 
@@ -18,12 +19,15 @@ export class LowerGroundFloor {
   lgfFeed2SnapshotStarted = signal(false);
   sendMicToLGF = signal(false);
 
-  constructor(public dataService: DataService) {}
+  constructor(
+    public dataService: DataService,
+    public themeService: ThemeService,
+  ) {}
 
   lgfFeedPressed() {
-    CrComLib.setAnalog('33', this.dataService.selectedSourceValue());
+    CrComLib.setAnalog('13', this.dataService.selectedSourceValue());
   }
   lgfFeedClearPressed() {
-    CrComLib.setAnalog('33', 0);
+    CrComLib.setAnalog('13', 0);
   }
 }

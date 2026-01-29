@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PinpadComponent } from './pinpad.component';
+import { Pinpad } from './pinpad';
 
-describe('PinpadComponent', () => {
-  let component: PinpadComponent;
-  let fixture: ComponentFixture<PinpadComponent>;
+describe('Pinpad', () => {
+  let component: Pinpad;
+  let fixture: ComponentFixture<Pinpad>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PinpadComponent]
-    })
-    .compileComponents();
+      imports: [Pinpad],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(PinpadComponent);
+    fixture = TestBed.createComponent(Pinpad);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

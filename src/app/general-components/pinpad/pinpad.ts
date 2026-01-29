@@ -8,22 +8,28 @@ declare var CrComLib: CrComLib;
 
 @Component({
   selector: 'app-pinpad',
-  imports: [ CommonModule ],
-  templateUrl: './pinpad.component.html',
-  styleUrl: './pinpad.component.css'
+  imports: [CommonModule],
+  templateUrl: './pinpad.html',
+  styleUrl: './pinpad.css',
 })
-export class PinpadComponent {
+export class Pinpad {
   pincode = signal('');
   pinCorrect = signal(false);
   pinIncorrect = signal(false);
 
-  constructor(private dataService: DataService, public themeService: ThemeService, private router: Router) {
+  constructor(
+    private dataService: DataService,
+    public themeService: ThemeService,
+    private router: Router,
+  ) {
     // Watch for pinCorrect to become true
     effect(() => {
       if (this.pinCorrect()) {
         // Hide pinpad and navigate to lower-ground-floor
         this.dataService.isPinpadVisible.set(false);
-        this.router.navigate(['/main-page/routing/lower-ground-floor'], { skipLocationChange: true });
+        this.router.navigate(['/main-page/routing/lower-ground-floor'], {
+          skipLocationChange: true,
+        });
       }
     });
   }
@@ -32,7 +38,6 @@ export class PinpadComponent {
     // Handle number press
     number = number + 60; // Map 0-9 to 60-69
     CrComLib.pulseDigital(number.toString());
-    console.log('Pinpad number pressed: ' + number);
   }
 
   pinpadClearPressed() {
@@ -52,31 +57,19 @@ export class PinpadComponent {
   pinCodeSubscription!: string;
 
   ngOnInit() {
-    this.pinCodeSubscription = CrComLib.subscribeState(
-      's',
-      '3',
-      (pinCode: string) => {
-        this.pincode.set(pinCode);
-      }
-    );
-    this.pinCodeSubscription = CrComLib.subscribeState(
-      'b',
-      '72',
-      (isPinCorrect: boolean) => {
-        this.pinCorrect.set(isPinCorrect);
-      }
-    );
-    this.pinCodeSubscription = CrComLib.subscribeState(
-      'b',
-      '73',
-      (isPinIncorrect: boolean) => {
-        this.pinIncorrect.set(isPinIncorrect);
-      }
-    );
+    this.pinCodeSubscription = CrComLib.subscribeState('s', '3', (pinCode: string) => {
+      this.pincode.set(pinCode);
+    });
+    this.pinCodeSubscription = CrComLib.subscribeState('b', '72', (isPinCorrect: boolean) => {
+      this.pinCorrect.set(isPinCorrect);
+    });
+    this.pinCodeSubscription = CrComLib.subscribeState('b', '73', (isPinIncorrect: boolean) => {
+      this.pinIncorrect.set(isPinIncorrect);
+    });
   }
   ngOnDestroy() {
-    CrComLib.unsubscribeState('s','3',this.pinCodeSubscription);
-    CrComLib.unsubscribeState('b','72',this.pinCodeSubscription);
-    CrComLib.unsubscribeState('b','73',this.pinCodeSubscription);
+    CrComLib.unsubscribeState('s', '3', this.pinCodeSubscription);
+    CrComLib.unsubscribeState('b', '72', this.pinCodeSubscription);
+    CrComLib.unsubscribeState('b', '73', this.pinCodeSubscription);
   }
 }

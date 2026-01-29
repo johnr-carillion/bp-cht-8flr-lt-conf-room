@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="tick"
+   viewBox="0 0 32 32"
+   fill="#ffffff"
+   version="1.1"
+   sodipodi:docname="bp-tick-interface-dark-grey-32.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="36.46875"
+     inkscape:cx="15.98629"
+     inkscape:cy="16"
+     inkscape:window-width="3440"
+     inkscape:window-height="1369"
+     inkscape:window-x="2872"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="tick" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">.cls-1{stroke-width:0px;}</style>
+  </defs>
+  <path
+     class="cls-1"
+     d="M28.873535,6.818848c-.3125-.311523-.819336-.311523-1.131836,0L11.077148,23.483887l-6.819336-6.818848c-.311523-.311523-.818848-.312012-1.131348.000488-.312012.312012-.312012.818848.000488,1.131348l7.384766,7.384277c.155762.155762.36084.233887.56543.233887s.409668-.078125.565918-.233887L28.873535,7.950684c.312012-.3125.312012-.819336,0-1.131836Z"
+     id="path1"
+     style="fill:#333333;fill-opacity:1" />
+</svg>

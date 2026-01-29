@@ -30,8 +30,8 @@ export class DataService implements OnDestroy {
   sonyDisplaySourceIcon = signal<string>('./assets/images/bp-plus-interface-bp-light-green-32.svg');
 
   lgfFeedSourceValue = signal<number>(0);
-
   lgfFeedSourceName = signal<string>('Blank');
+  lgfFeedSourceIcon = signal<string>('./assets/images/bp-plus-interface-bp-light-green-32.svg');
 
   isIptvControlsActive = signal(false);
 
@@ -42,12 +42,9 @@ export class DataService implements OnDestroy {
   sources: SourceEntry[] = [
     { id: 0, name: 'Blank', type: 'blank', group: 'NONE' },
     { id: 1, name: 'IPTV', type: 'iptv', group: 'Rack' },
-    { id: 2, name: 'Wireless AirMedia', type: 'computer-laptop', group: 'Credenza' },
-    { id: 3, name: 'HDMI Input', type: 'computer-laptop', group: 'Credenza' },
-    { id: 4, name: 'Teams (People)', type: 'office365_teams', group: 'Rack' },
-    { id: 5, name: 'Teams (Content)', type: 'office365_teams', group: 'Rack' },
-    { id: 6, name: 'LGF Feed 1', type: 'lgf-feed', group: 'LGF FEEDS' },
-    { id: 7, name: 'LGF Feed 2', type: 'lgf-feed', group: 'LGF FEEDS' },
+    { id: 2, name: 'Teams', type: 'office365_teams', group: 'Rack' },
+    { id: 3, name: 'LGF Feed', type: 'lgf-feed', group: 'LGF FEEDS' },
+    { id: 4, name: 'Wireless AirMedia', type: 'computer-laptop', group: 'Credenza' },
   ];
 
   // helper: get by id
@@ -88,6 +85,13 @@ export class DataService implements OnDestroy {
       .subscribe((event: any) => {
         this.isVideowallActive.set(event.urlAfterRedirects.includes('videowall'));
         this.isLowerGroundFloorActive.set(event.urlAfterRedirects.includes('lower-ground-floor'));
+
+        // Update lastRoutingChild based on current route
+        if (event.urlAfterRedirects.includes('videowall')) {
+          this.lastRoutingChild.set('videowall');
+        } else if (event.urlAfterRedirects.includes('lower-ground-floor')) {
+          this.lastRoutingChild.set('lower-ground-floor');
+        }
       });
 
     // Update souce name
@@ -136,8 +140,22 @@ export class DataService implements OnDestroy {
     effect(() => {
       const src1 = this.getSourceById(this.lgfFeedSourceValue());
       const name1 = src1?.name ?? 'Blank';
-      this.lgfFeedSourceName.set(
-        name1 === 'Blank' ? 'Blank' : `${src1?.group ?? 'Blank'}: ${name1}`,
+      this.lgfFeedSourceName.set(name1 === 'Blank' ? 'Add source' : `${name1}`);
+      this.lgfFeedSourceIcon.set(
+        name1 === 'Blank'
+          ? './assets/images/bp-plus-interface-' +
+              (this.themeService.isDarkMode()
+                ? 'arri-bright-green-32.svg'
+                : 'bp-light-green-32.svg')
+          : './assets/images/bp-' +
+              (src1?.type ??
+                'plus-interface-' +
+                  (this.themeService.isDarkMode()
+                    ? 'arri-bright-green-32.svg'
+                    : 'bp-light-green-32.svg')) +
+              '-pictograms-' +
+              (this.themeService.isDarkMode() ? 'light' : 'mid') +
+              '-grey.svg',
       );
     });
 
@@ -203,6 +221,13 @@ export class DataService implements OnDestroy {
         this.sonyDisplaySourceValue.set(currentSourceValue);
       },
     );
+    this.videoRoutingStatusSubscription = CrComLib.subscribeState(
+      'n',
+      '13',
+      (currentSourceValue: number) => {
+        this.lgfFeedSourceValue.set(currentSourceValue);
+      },
+    );
 
     // Subscribe to source in use states
     this.sourceInUseSubscription = CrComLib.subscribeState(
@@ -251,6 +276,7 @@ export class DataService implements OnDestroy {
     CrComLib.unsubscribeState('b', '104', this.sourceVideoSignalSubscription);
     CrComLib.unsubscribeState('n', '11', this.videoRoutingStatusSubscription);
     CrComLib.unsubscribeState('n', '12', this.videoRoutingStatusSubscription);
+    CrComLib.unsubscribeState('n', '13', this.videoRoutingStatusSubscription);
     CrComLib.unsubscribeState('b', '131', this.sourceInUseSubscription);
     CrComLib.unsubscribeState('b', '132', this.sourceInUseSubscription);
     CrComLib.unsubscribeState('b', '133', this.sourceInUseSubscription);
