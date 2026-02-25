@@ -5,6 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:archive": "npm run build && ch5-cli archive -p bp-cht-8flr-lt-conf-room -d dist/bp-cht-8flr-lt-conf-room/browser -o archive",
+    "build:deploywithpassword": "npx ch5-cli deploy -p -H 192.168.1.11 -t touchscreen archive/bp-cht-8flr-lt-conf-room.ch5z",
+    "build:onestepwithpassword": "npm run build:archive && npm run build:deploywithpassword",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
